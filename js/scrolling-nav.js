@@ -1,43 +1,53 @@
-//jQuery to collapse the navbar on scroll
-$(window).scroll(function() {
-    if ($(".navbar").offset().top > 50) {
-        $(".navbar-fixed-top").addClass("top-nav-collapse");
-    } else {
-        $(".navbar-fixed-top").removeClass("top-nav-collapse");
-    }
-});
+document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.querySelector('.navbar');
+    const navbarDefault = document.querySelector('.navbar-default');
+    const navName = document.querySelector('.navName');
+    const workSection = document.getElementById('work');
+    const navbarCollapse = document.getElementById('navbar');
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const collapseInstance = navbarCollapse ? new bootstrap.Collapse(navbarCollapse, { toggle: false }) : null;
 
-//jQuery for page scrolling feature - requires jQuery Easing plugin
-$(function() {
-    $('a.page-scroll').bind('click', function(event) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
-        }, 1500, 'easeInOutExpo');
-        event.preventDefault();
-    });
-});
-
-
-  //For hiding the navbar-brand and navbar background color -->
-         $(".navName").hide();//hide your div initially
-                    $(".navbar-default").removeClass('navbarBG');
-                    var topOfOthDiv = $("#work").offset().top - 100;
-                   $(window).scroll(function() {
-                       if($(window).scrollTop() > topOfOthDiv) { //scrolled past the other div?
-                           $(".navName").show(); //reached the desired point -- show div
-                           $(".navbar-default").addClass('navbarBG');
-                       }
-                       else {
-                           $(".navName").hide();
-                           $(".navbar-default").removeClass('navbarBG');
-                       }
-                    });
-
-    $(function() {
-    $('.nav a').on('click', function(){ 
-        if($('.navbar-toggle').css('display') != 'none'){
-            $(".navbar-toggle").trigger( "click" );
+    const toggleNavBackground = () => {
+        const scrolled = window.scrollY > 50;
+        if (navbar) {
+            navbar.classList.toggle('top-nav-collapse', scrolled);
         }
+    };
+
+    const toggleBrandVisibility = () => {
+        if (!workSection || !navName || !navbarDefault) {
+            return;
+        }
+        const triggerPoint = workSection.offsetTop - 100;
+        const shouldShow = window.scrollY > triggerPoint;
+        navName.style.display = shouldShow ? 'block' : 'none';
+        navbarDefault.classList.toggle('navbarBG', shouldShow);
+    };
+
+    const handleScroll = () => {
+        toggleNavBackground();
+        toggleBrandVisibility();
+    };
+
+    // init state
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Close nav on link click for mobile
+    document.querySelectorAll('a.page-scroll').forEach(link => {
+        link.addEventListener('click', event => {
+            const targetId = link.getAttribute('href');
+            if (targetId && targetId.startsWith('#')) {
+                const destination = document.querySelector(targetId);
+                if (destination) {
+                    event.preventDefault();
+                    destination.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+            if (collapseInstance && navbarToggler && getComputedStyle(navbarToggler).display !== 'none') {
+                collapseInstance.hide();
+            }
+        });
     });
 });

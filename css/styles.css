@@ -7,7 +7,7 @@
     width: 100%;
 }
 
-.nav.navbar-nav.navbar-right li a,
+.navbar-default .navbar-nav li a,
 .navbar-default .navbar-brand {
     color: #1F2A44;
 }
@@ -20,53 +20,53 @@
 .navbar-default .navbar-nav > li > a:active {color: rgba(1, 177, 174, 1); }
 
 @media only screen and (max-width: 766px) {
-.collapsing, .in {background-color: rgba(255,255,255,0.8);}
-.collapsing ul li a, .in ul li a {color: #1F2A44!important;}
-.collapsing ul li a:hover, .in ul li a:hover {color: rgba(1, 177, 174, 1)!important;}
+.collapsing, .show {background-color: rgba(255,255,255,0.8);}
+.collapsing ul li a, .show ul li a {color: #1F2A44!important;}
+.collapsing ul li a:hover, .show ul li a:hover {color: rgba(1, 177, 174, 1)!important;}
 }
 
-.navbar-default .navbar-toggle .icon-bar {
+.navbar-default .navbar-toggler .icon-bar {
     background-color: #1F2A44;
 }
 
-.navbar-toggle.collapsed,
-.navbar-toggle.collapsed:focus,
-.navbar-toggle.collapsed:hover,{
+.navbar-toggler.collapsed,
+.navbar-toggler.collapsed:focus,
+.navbar-toggler.collapsed:hover {
     background-color: rgba(0,0,0,0);
     border: none;
     border-radius: 0 none;
 }
-.navbar-toggle {
+.navbar-toggler {
   border: none;
   background: transparent !important;
     color: #1F2A44 !important;
 }
-.navbar-toggle:hover {
+.navbar-toggler:hover {
   background: transparent !important;
 }
-.navbar-toggle .icon-bar {
+.navbar-toggler .icon-bar {
   width: 22px;
   transition: all 0.2s;
     
 }
-.navbar-toggle .top-bar {
+.navbar-toggler .top-bar {
   transform: rotate(45deg);
   transform-origin: 10% 10%;
 }
-.navbar-toggle .middle-bar {
+.navbar-toggler .middle-bar {
   opacity: 0;
 }
-.navbar-toggle .bottom-bar {
+.navbar-toggler .bottom-bar {
   transform: rotate(-45deg);
   transform-origin: 10% 90%;
 }
-.navbar-toggle.collapsed .top-bar {
+.navbar-toggler.collapsed .top-bar {
   transform: rotate(0);
 }
-.navbar-toggle.collapsed .middle-bar {
+.navbar-toggler.collapsed .middle-bar {
   opacity: 1;
 }
-.navbar-toggle.collapsed .bottom-bar {
+.navbar-toggler.collapsed .bottom-bar {
   transform: rotate(0);
 }
 
@@ -76,6 +76,7 @@ body, html {
     width: 100%;
     padding: 0px;
     margin: 0px;
+        scroll-behavior: smooth;
 }
 
 html {
@@ -167,7 +168,9 @@ src: url("../fonts/Arciform.otf") format("opentype");
     margin-top: 20px;
 }
 
-.fa {
+.fa,
+.fa-brands,
+.fa-solid {
     font-size: 10px;
     padding: 0px 7px 0px 7px;
     color: black;
@@ -186,7 +189,7 @@ src: url("../fonts/Arciform.otf") format("opentype");
 }
 
 
-.col-xs-12 {
+.col-12 {
     margin: 10px 0px 10px 0px;
 }
 
@@ -201,20 +204,12 @@ src: url("../fonts/Arciform.otf") format("opentype");
     margin-top: 10px;
 }
 
-.fa-facebook:hover {
-    color: rgb(59,89,152);
-}
-
 .fa-linkedin:hover {
     color: #0077b5;
 }
 
 .fa-github:hover {
     color: #666666;
-}
-
-.fa-twitter:hover {
-    color: #55acee;
 }
 
 .fa-envelope:hover {
