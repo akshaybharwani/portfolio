@@ -11,101 +11,208 @@
     <meta name="theme-color" content="#ffffff">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; script-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com 'unsafe-inline'; font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com data:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; script-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.gstatic.com data:; connect-src 'self'; object-src 'none'; base-uri 'self'">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Akshay M Bharwani - Web Designer &amp; Developer</title>
-    <meta name="Description" content="Akshay Bharwani is a front end web designer, developer & a freelancer located in Jalgaon, Maharshtra, India ">
-  <meta name="Keywords" content="front end, front end web development, web, web design, web development, html, css, jalgaon, jalgaon website, akshay bharwani, bharwani">
+    <title>Akshay Bharwani - Unity Developer</title>
+    <meta name="Description" content="Unity Developer with 6+ years of experience designing interactive systems. Worked on Forestrike (Devolver Digital) and major digital museum installations.">
+    <meta name="Keywords" content="unity developer, game developer, unity, C#, interactive systems, forestrike, devolver digital, akshay bharwani">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOI2JFfu7x4C3sZRMp3saAk0UCOw==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link href="css/styles.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/scrolling-nav.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            overflow: hidden;
+            padding: 20px;
+        }
+        
+        .link-in-bio {
+            text-align: center;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 50px 40px;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .profilePicture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 25px;
+            display: block;
+            border: 5px solid #fff;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .profilePicture:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+        }
+        
+        .headerName {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+        
+        .infoHeader {
+            font-size: 18px;
+            font-weight: 500;
+            color: #666;
+            margin-bottom: 28px;
+        }
+        
+        .icons {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            margin-bottom: 35px;
+        }
+        
+        .icons a {
+            color: #555;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: #f5f5f5;
+            text-decoration: none;
+        }
+        
+        .icons a:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .icons a[aria-label="LinkedIn"]:hover {
+            color: #fff;
+            background: #0077b5;
+        }
+        
+        .icons a[aria-label="GitHub"]:hover {
+            color: #fff;
+            background: #333;
+        }
+        
+        .icons a[aria-label="Itch.io"]:hover {
+            color: #fff;
+            background: #fa5c5c;
+        }
+        
+        .icons a[aria-label="Behance"]:hover {
+            color: #fff;
+            background: #1769ff;
+        }
+        
+        .icons a i {
+            font-size: 26px;
+            line-height: 1;
+        }
+        
+        .bio-text {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #555;
+            margin: 0 0 30px 0;
+            text-align: left;
+            font-weight: 400;
+        }
+        
+        .footer {
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            margin-top: 10px;
+        }
+        
+        .madeBy {
+            font-size: 13px;
+            color: #999;
+            font-weight: 400;
+        }
+        
+        @media (max-width: 600px) {
+            .link-in-bio {
+                padding: 40px 30px;
+            }
+            .headerName {
+                font-size: 28px;
+            }
+            .bio-text {
+                font-size: 14px;
+            }
+            .icons {
+                gap: 14px;
+            }
+            .icons a {
+                width: 45px;
+                height: 45px;
+            }
+        }
+    </style>
     </head>
     
-    <body class="mainPage" id="page-top">
-        <header>
-           <nav class="navbar navbar-default navbar-fixed-top navbarBG navbar-expand-lg fixed-top" id="navbarBG">
-      <div class="container">
-        <div class="navbar-header d-flex align-items-center">
-          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="icon-bar top-bar"></span>
-            <span class="icon-bar middle-bar"></span>
-            <span class="icon-bar bottom-bar"></span>
-          </button> 
-            <div class="navName">
-            <a class="navbar-brand page-scroll" href="#page-top">Akshay M Bharwani</a>
-            </div>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse justify-content-end">
-          
-          <ul class="navbar-nav ms-auto">
-            <li class="hidden"><a class="page-scroll nav-link" href="#page-top"></a></li>
-            <li class="nav-item"><a href="#work" class="page-scroll nav-link">WORK</a></li>
-            <li class="nav-item"><a href="#about" class="page-scroll nav-link">ABOUT</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-          
-      </div>
-    </nav>
+    <body>
+        <div class="link-in-bio">
+            <img class="profilePicture img-responsive" src="images/Akshay%20M%20Bharwani.jpg" alt="akshay Bharwani Profile Picture"/>
+            <h1 class="headerName">akshay Bharwani</h1>
+            <h2 class="infoHeader">Unity Developer</h2>
             
-            <div class="row mainWrapper">
-                
-                <div class="col-12 col-md-12 col-lg-12">
-                    <img class="profilePicture img-responsive" src="images/Akshay%20M%20Bharwani.jpg" alt="Akshay M Bharwani Profile Picture"/>
-          <h1 class="headerName">Akshay M Bharwani</h1>
-    <h2 class="infoHeader">Web Designer &amp; Developer</h2>
-                    <div class="icons">
-                      <a href="https://www.linkedin.com/in/akshaybharwani" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-linkedin fa-2x"></i></a>
-                      <a href="https://www.github.com/akshaybharwani" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-github fa-2x"></i></a>
-                    </div>
-                </div><!-- /container -->
+            <div class="icons">
+                <a href="https://www.linkedin.com/in/akshaybharwani" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin fa-2x"></i></a>
+                <a href="https://www.github.com/akshaybharwani" target="_blank" rel="noreferrer noopener" aria-label="GitHub"><i class="fa-brands fa-github fa-2x"></i></a>
+                <a href="https://univrsalgamer.itch.io" target="_blank" rel="noreferrer noopener" aria-label="Itch.io"><i class="fa-brands fa-itch-io fa-2x"></i></a>
+                <a href="https://behance.net/akshaybharwani" target="_blank" rel="noreferrer noopener" aria-label="Behance"><i class="fa-brands fa-behance fa-2x"></i></a>
+            </div>
+
+            <p class="bio-text">
+                Unity Developer with 6+ years of experience designing and implementing interactive systems in Unity and C#. 
+                Contributed to gameplay, UI, and editor features for Forestrike, published by Devolver Digital. 
+                Led development of major digital museum experiences for CSMVS Mumbai and the Ajanta Caves in New Delhi, 
+                creating immersive installations that bridge cultural heritage with interactive technology. 
+                Specialized in debugging, performance optimization, and collaborating with design and product teams to 
+                deliver polished experiences through playtesting and user feedback.
+            </p>
+
+            <div class="footer">
+                <div class="madeBy">&copy; 2026 Akshay Bharwani</div>
             </div>
         </div>
-        </header>
-        <div class="container section" id="work">
-          <h2 class="sectionHeader">Work</h2>
-            <div class="about">
-                <div class="row">
-                    <div class="col-lg-2"></div>
-                    <div class="col-lg-4">
-                		<img class="item img-responsive" src="images/shot-20151108-2004-6rdpqb.jpeg" alt="techkrunch 2k15"/>
-                    </div><!-- /.col-lg-4 -->
-                    <div class="col-lg-4">
-                      <img style="margin-bottom: 40px" class="item img-responsive" src="images/shot-20151108-2004-rbfopj.jpeg" alt="trpcs 2k15"/>
-                        <a href="https://akshaybharwani.github.io/paroksha-2k16/"><img class="item img-responsive" src="images/Paroksha%20website%20screenshot.jpg" alt="paroksha 2k16"></a>
-                    </div><!-- /.col-lg-4 -->
-                </div><!-- /.row -->
-            </div><!-- /container -->
-    </div>
-    
-         <div class="container section" id="about">
-          <h2 class="sectionHeader">About</h2>
-             <div class="about">
-                <div class="row">
-                    <div class="col-lg-4">
-            <p><span class="category">STUDY</span><br>A Computer Science &amp; Engineering Student at GHRIEM, Jalgaon.<br>Currently in Third Year.</p>
-                    </div><!-- /.col-lg-4 -->
-                    <div class="col-lg-4">
-                        <p><span class="category">LEARN</span><br>Knows C, C++, HTML, CSS, JavaScript/jQuery, Bootstrap and Foundation 6.<br>
-                    Learning Ruby on Rails, Game Development &amp; Design and Mobile Applications Development.</p>
-                    </div><!-- /.col-lg-4 -->
-                    <div class="col-lg-4">
-                        <p><span class="category">PLAY</span><br>Loves designing, creating, learning things, playing Games, answering Questions, taking pictures with his Lumia, watching TV Series and Movies.</p>
-                    </div><!-- /.col-lg-4 -->
-                </div><!-- /.row -->
-            </div><!-- /container -->
-        </div>
-    
-             
-    
-    
-    
-        <div class="container footer">
-            <div class="col-12 col-md-12 madeBy">Made by Akshay M Bharwani &copy; 2026</div>
-        </div>
-    
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-        <script src="js/scrolling-nav.js"></script>
     </body>
 </html>
